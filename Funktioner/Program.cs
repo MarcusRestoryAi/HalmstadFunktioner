@@ -43,6 +43,9 @@
             //Anrop till BiggestNumber med funktion som parameter
             summa = BiggestNumber(3, BiggestNumber(5, Add(2, 2)));
             Console.WriteLine($"Största nummret är {summa}");
+
+            //Anropar MyFunc1
+            Console.WriteLine(MyFunc1(summa));
         }
 
         //Skapa en ny function som heter myFunction
@@ -92,6 +95,19 @@
 
             //Kod som är omöjlig att nå
             return tal1;
+        }
+
+        //2st Funktioner som anropar varandra
+        static int MyFunc1(int value)
+        {
+            int x = MyFunc2(value);
+            return x;
+
+            // return MyFunc2(value);
+        }
+        static int MyFunc2(int value)
+        {
+            return value * 2;
         }
     }
 }
